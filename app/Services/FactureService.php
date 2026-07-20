@@ -33,7 +33,7 @@ class FactureService
     public static function creerFactureDepuisDocuments(int $clientId, array $documentSortieIds, int $userId): Facture
     {
         return DB::transaction(function () use ($clientId, $documentSortieIds, $userId) {
-            $documents = \App\Models\DocumentSortie::with([
+            $documents = \App\Models\DocumentsSortie::with([
                 'bonCommande.lignes',
                 'lignes.produitPhysique.produit',
             ])->whereIn('id', $documentSortieIds)->get();

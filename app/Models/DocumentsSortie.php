@@ -46,6 +46,12 @@ class DocumentsSortie extends Model
         return $this->hasMany(\App\Models\DocumentSortieLigne::class, 'document_sortie_id');
     }
 
+    /** Alias relation (nom d'origine Prisma : lignes). */
+    public function lignes(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(\App\Models\DocumentSortieLigne::class, 'document_sortie_id');
+    }
+
     public function retoursClients(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
         return $this->hasMany(\App\Models\RetourClient::class);

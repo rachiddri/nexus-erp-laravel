@@ -175,6 +175,8 @@ class DatabaseSeeder extends Seeder
             );
         }
 
+        $this->call(DemoDataSeeder::class);
+
         $this->command->info('✅ Seed terminé !');
         $this->command->info('   - ' . count($roles) . ' rôles (spatie)');
         $this->command->info('   - 1 admin (admin@nexus-erp.dz / admin123)');

@@ -64,4 +64,10 @@ class BonCommande extends Model
     {
         return $this->hasMany(\App\Models\DocumentsSortie::class);
     }
+
+    /** Alias relation (nom d'origine Prisma : lignes). */
+    public function lignes(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(\App\Models\BonCommandeLigne::class);
+    }
 }
